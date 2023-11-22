@@ -1,16 +1,28 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="note" version="1.0" demote-non-dropping-particle="sort-only" default-locale="nl-NL">
-  <!-- This style was edited with the Visual CSL Editor (https://editor.citationstyles.org/visualEditor/) -->
-  <info>
-    <title>Leidraad voor juridische auteurs 2022 Casper</title>
-    <title-short>Leidraad 2022</title-short>
-    <id>http://www.zotero.org/styles/leidraad-voor-juridische-auteurs-2022</id>
-    <link href="http://www.zotero.org/styles/leidraad-voor-juridische-auteurs-2022" rel="self"/>
+<info>
+    <title>Leidraad voor juridische auteurs 2022</title>
+    <title-short>Leidraad 2022 V2</title-short>
+    <id>http://www.zotero.org/styles/leidraad-voor-juridische-auteurs</id>
+    <!-- TODO: Pas deze twee (boven en beneden) aan naar de correcte Zotero.org/styles link-->
+    <link href="http://www.zotero.org/styles/leidraad-voor-juridische-auteurs" rel="self"/>
     <link href="https://www.wolterskluwer.nl/auteur/voor-auteurs/auteursmiddelen-en-instructies" rel="documentation"/>
     <link href="https://www.wolterskluwer.com/-/media/project/wolterskluwer/oneweb/www/lr/nl-media/auteurs%20voor-auteurs/pdf26920190802161350.pdf" rel="documentation"/>
+    <author>
+      <name>Casper van Wetten</name>
+      <email>c.o.vanwetten@gmail.com</email>
+    </author>
+    <author>
+      <name>Joël Hendriks</name>
+      <email>leidraad.csl@joelhendriks.nl</email>
+    </author>
+    <author>
+      <name>Pieter van der Wees</name>
+      <email>pieter@vanderwe.es</email>
+    </author>
     <category citation-format="note"/>
     <category field="law"/>
-    <updated>2023-11-22T12:59:55+00:00</updated>
+    <updated>2023-05-09T05:06:20+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="nl-NL">
@@ -180,13 +192,11 @@
       <choose>
         <if type="article-magazine article-newspaper" match="any">
           <group delimiter=" " prefix=", ">
-            <text variable="container-title" font-style="italic"/>
             <date form="text" variable="issued"/>
           </group>
         </if>
         <else-if match="all" type="article-journal">
           <group delimiter=" ">
-            <text variable="container-title" font-style="italic" prefix=", "/>
             <text macro="number-journal-short" prefix=" "/>
           </group>
         </else-if>
@@ -369,29 +379,14 @@
       <text variable="authority" suffix=" "/>
       <text macro="date-legal-case"/>
       <choose>
-        <if variable="number volume container-title" match="all">
+        <if variable="number">
           <text variable="number" prefix=", "/>
-          <text variable="container-title" font-style="italic" prefix=", " suffix=" "/>
-          <text variable="volume"/>
-          <text variable="page" prefix=", "/>
+          <choose>
+            <if locator="paragraph">
+              <text variable="locator" prefix=" "/>
+            </if>
+          </choose>
         </if>
-        <else-if variable="number">
-          <text variable="number" prefix=", "/>
-          <choose>
-            <if locator="paragraph">
-              <text variable="locator" prefix=" "/>
-            </if>
-          </choose>
-        </else-if>
-        <else-if variable="volume container-title" match="all">
-          <text variable="container-title" prefix=", " suffix=" "/>
-          <text variable="volume"/>
-          <choose>
-            <if locator="paragraph">
-              <text variable="locator" prefix=" "/>
-            </if>
-          </choose>
-        </else-if>
       </choose>
       <choose>
         <if match="any" locator="page">
@@ -401,6 +396,7 @@
           <text variable="locator" prefix=", r.o. "/>
         </else>
       </choose>
+      <text variable="title" form="short" font-style="italic" prefix=" (" suffix=")"/>
     </group>
   </macro>
   <macro name="remains-short">
@@ -415,39 +411,19 @@
   <macro name="footnote-reference">
     <choose>
       <if type="article article-magazine article-newspaper article-journal book chapter paper-conference report review review-book thesis" match="any">
+        <text macro="reference-book-etc-short"/>
         <choose>
-          <if position="subsequent">
-            <text macro="reference-book-etc-short"/>
-            <choose>
-              <if locator="page chapter sub-verbo column book figure folio line note opus part verse issue volume" match="any">
-                <label plural="never" prefix=", " suffix=" " variable="locator" form="short"/>
-                <text variable="locator"/>
-              </if>
-              <else-if match="any" locator="paragraph section">
-                <text variable="locator" prefix="/"/>
-              </else-if>
-              <else-if type="article-journal" match="all"/>
-              <else-if variable="page">
-                <text variable="page" prefix=", p. "/>
-              </else-if>
-            </choose>
+          <if locator="page chapter sub-verbo column book figure folio line note opus part verse issue volume" match="any">
+            <label plural="never" prefix=", " suffix=" " variable="locator" form="short"/>
+            <text variable="locator"/>
           </if>
-          <else>
-            <text macro="reference-book-etc-long"/>
-            <choose>
-              <if locator="page chapter sub-verbo column book figure folio line note opus part verse issue volume" match="any">
-                <label plural="never" prefix=", " suffix=" " variable="locator" form="short"/>
-                <text variable="locator"/>
-              </if>
-              <else-if match="any" locator="paragraph section">
-                <text variable="locator" prefix="/"/>
-              </else-if>
-              <else-if type="article-journal" match="all"/>
-              <else-if variable="page">
-                <text variable="page" prefix=", p. "/>
-              </else-if>
-            </choose>
-          </else>
+          <else-if match="any" locator="paragraph section">
+            <text variable="locator" prefix="/"/>
+          </else-if>
+          <else-if type="article-journal" match="all"/>
+          <else-if variable="page">
+            <text variable="page" prefix=", p. "/>
+          </else-if>
         </choose>
       </if>
       <else-if type="bill legislation" match="any">
@@ -575,22 +551,19 @@
   <macro name="title-and-collection">
     <group suffix=", ">
       <text variable="title" font-style="italic"/>
+      
     </group>
   </macro>
   <macro name="number-journal-short">
     <choose>
-      <if match="all" variable="issued volume">
-        <date date-parts="year" form="text" variable="issued"/>
-        <text variable="volume" prefix="/"/>
-      </if>
-      <else-if match="all" variable="issued page">
+      <if match="all" variable="issued page">
         <text macro="year-publication"/>
         <choose>
           <if match="none" variable="locator">
             <text variable="page" prefix=", p. "/>
           </if>
         </choose>
-      </else-if>
+      </if>
       <else-if match="any" variable="issue">
         <text macro="year-publication"/>
         <text term="issue" form="short" prefix=", "/>
