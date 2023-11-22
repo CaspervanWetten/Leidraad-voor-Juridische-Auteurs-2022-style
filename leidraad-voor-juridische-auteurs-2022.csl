@@ -2,23 +2,15 @@
 <style xmlns="http://purl.org/net/xbiblio/csl" class="note" version="1.0" demote-non-dropping-particle="sort-only" default-locale="nl-NL">
 <info>
     <title>Leidraad voor juridische auteurs 2022</title>
-    <title-short>Leidraad 2022 V2</title-short>
-    <id>http://www.zotero.org/styles/leidraad-voor-juridische-auteurs</id>
-    <!-- TODO: Pas deze twee (boven en beneden) aan naar de correcte Zotero.org/styles link-->
-    <link href="http://www.zotero.org/styles/leidraad-voor-juridische-auteurs" rel="self"/>
+    <title-short>Leidraad 2022</title-short>
+    <id>http://www.zotero.org/styles/leidraad-voor-juridische-auteurs-2022</id>
+    <link href="http://www.zotero.org/styles/leidraad-voor-juridische-auteurs-2022" rel="self"/>
+    <link href="http://www.zotero.org/styles/leidraad-voor-juridische-auteurs" rel="template"/>
     <link href="https://www.wolterskluwer.nl/auteur/voor-auteurs/auteursmiddelen-en-instructies" rel="documentation"/>
     <link href="https://www.wolterskluwer.com/-/media/project/wolterskluwer/oneweb/www/lr/nl-media/auteurs%20voor-auteurs/pdf26920190802161350.pdf" rel="documentation"/>
     <author>
       <name>Casper van Wetten</name>
       <email>c.o.vanwetten@gmail.com</email>
-    </author>
-    <author>
-      <name>Joël Hendriks</name>
-      <email>leidraad.csl@joelhendriks.nl</email>
-    </author>
-    <author>
-      <name>Pieter van der Wees</name>
-      <email>pieter@vanderwe.es</email>
     </author>
     <category citation-format="note"/>
     <category field="law"/>
