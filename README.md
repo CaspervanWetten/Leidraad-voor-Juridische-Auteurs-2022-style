@@ -18,5 +18,5 @@ Heeft nu direct support voor:
   * parlementaire documenten
   * (Europese) regelgeving
   * handboeken en
-  * bijdragen in boeken
+  * bijdragen in boeken      
   kan niet gegarandeerd worden, maar hij doet zijn best.
