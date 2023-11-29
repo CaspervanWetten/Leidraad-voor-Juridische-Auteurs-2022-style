@@ -13,10 +13,10 @@ Heeft nu direct support voor:
 * Artikelen
 * Boeken
   * Noch boeken noch artikelen kunnen direct door de connector uit InView Essentials ge-exporteerd worden, 'internationalere' bronnen (scholar etc.) werken wel gewoon
-* correcte volgens de leidraad citatie voor:
+* Een correcte volgens de leidraad citatie voor de volgende items:
   * kamerstukken
   * parlementaire documenten
   * (Europese) regelgeving
   * handboeken en
   * bijdragen in boeken
-* kan niet gegarandeerd worden, maar hij doet zijn best.
+  kan niet gegarandeerd worden, maar hij doet zijn best.
