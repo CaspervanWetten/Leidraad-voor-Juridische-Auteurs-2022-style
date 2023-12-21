@@ -577,6 +577,11 @@
         <text variable="issue" prefix=" "/>
       </if>
     </choose>
+    <choose>
+      <if match="any" variable="page">
+        <text variable="page" prefix=", p. "/>
+      </if>
+    </choose>
   </macro>
   <macro name="publisher-and-place">
     <group delimiter=": ">
