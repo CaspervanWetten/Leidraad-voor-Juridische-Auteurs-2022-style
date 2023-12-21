@@ -550,11 +550,6 @@
     <choose>
       <if match="all" variable="issued page">
         <text macro="year-publication"/>
-        <choose>
-          <if match="none" variable="locator">
-            <text variable="page" prefix=", p. "/>
-          </if>
-        </choose>
       </if>
       <else-if match="any" variable="issue">
         <text macro="year-publication"/>
